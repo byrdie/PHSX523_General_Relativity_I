@@ -1,0 +1,139 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=.3in, voffset=.3in, ]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage{multicol}
+\usepackage[subnum]{cases}
+\usepackage{relsize}
+\usepackage[makeroom]{cancel}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{calligra}
+\usepackage[normalem]{ulem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbold}
+
+
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n} 
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+
+% Makes '\sr' make a script r
+\newcommand{\sr}{\ensuremath{\mathcalligra{r}}}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
+\newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
+\newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
+\newcommand{\rhat}{\boldsymbol{\hat{\textbf{r}}}}
+\newcommand{\srhat}{\boldsymbol{\hat{\textbf{\sr}}}}
+\newcommand{\xhat}{\boldsymbol{\hat{\textbf{x}}}}
+\newcommand{\yhat}{\boldsymbol{\hat{\textbf{y}}}}
+\newcommand{\zhat}{\boldsymbol{\hat{\textbf{z}}}}
+\newcommand{\nhat}{\boldsymbol{\hat{\textbf{n}}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\textbf{$\phi$}}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\textbf{$\theta$}}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\textbf{$\rho$}}}}
+
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\vc}[1]{\overrightarrow{#1}}
+\newcommand{\fracl}[2]{\mathlarger{\frac{#1}{#2}}}
+\newcommand{\dd}{\, \mathrm{d}}
+\newcommand{\eo}{\epsilon_0}
+\newcommand{\mo}{\mu_\circ}
+\newcommand{\tder}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dtder}[2]{\frac{\dd^2 #1}{\dd #2^2}}
+\newcommand{\ttder}[2]{\frac{\dd^3 #1}{\dd #2^3}}
+\newcommand{\dpder}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\tpder}[2]{\frac{\partial^3 #1}{\partial #2^3}}
+\newcommand{\intas}{ \int_{-\infty}^\infty}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\ev}[1]{\left\langle #1 \right\rangle}
+\newcommand{\ce}{\wt{\vect{E}}}
+\newcommand{\cb}{\wt{\vect{B}}}
+\newcommand{\K}{\frac{1}{4 \pi \eo}}
+\newcommand{\lrp}[1]{\left( #1 \right)}
+\newcommand{\lrb}[1]{\left[ #1 \right]}
+\newcommand{\lrc}[1]{\left\{ #1 \right\}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\pagenumbering{gobble}
+
+\pagestyle{fancy}
+\lhead{Midterm 1}
+\chead{PHSX 523 General Relativity I}
+\rhead{Roy Smart}
+
+
+ 
+\begin{document}
+\small
+\begin{multicols}{2}
+	\setlength{\abovedisplayskip}{-25pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+	\begin{align*}
+		& \small \hspace{-10pt} \textbf{Special Relativity} \small \\
+			& \Delta s^2 = -\Delta t^2 + \Delta x^2 +\Delta y^2 + \Delta z^2	\tag*{Spacetime interval (S. 1.1)} \\
+			& \Delta \overline{s}^2 = \Delta s^2	\tag*{Invariance of the interval (S. 1.7)} \\
+			\begin{split}
+				& \overline{t} = \gamma (t - v x) \\
+				& \overline{x} = \gamma (v - vt) \\	
+			\end{split} 	\tag*{Lorentz Transforms (S. 1.12)} \\
+			& \Delta x^{\overline{\alpha}} = \Lambda_{\ \beta}^{\overline{\alpha}} \Delta x^\beta \tag*{Lorentz Transformation (S. 2.4)} \\
+			& \vec{A} \xrightarrow[\mathcal{O}]{} A^\alpha	\tag*{Components of the vector $\ve{A}$ (S. 2.7)} \\
+			& \lrp{\vec{e}_\alpha}^\beta = \delta_{\alpha}^{\ \beta}		\tag*{Definition of the basis vectors (S. 2.10)} \\
+			& \vec{A} \rightarrow A^\alpha \vec{e}_\alpha	\tag*{The vector $\vec{A}$ in terms of the basis vectors (S. 2.10)} \\
+			& \vec{e}_\alpha = \Lambda_{\ \alpha}^{\overline{\beta}} \vec{e}_{\overline{\beta}}		\tag*{Lorentz transform of basis vectors (S. 2.13)} \\
+			& \Lambda_{\ \alpha}^{\overline{\beta}} = \begin{pmatrix}
+				\gamma & -v \gamma & 0 & 0 \\
+				-v \gamma & \gamma & 0 & 0 \\
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{pmatrix}	\tag*{Components of the $\Lambda$ tensor (S. p38)} \\
+			& \vec{e}_{\ \overline{\mu}}^\nu(-\vec{v})e_\vec{e}_\nu	\tag*{Inverse Lorentz transform (S. 2.15)} \\
+			& \vec{e}_\alpha = \delta_{\ \alpha}^\nu \vec{e}_\nu		\tag*{Basis vector identity (S p40)} \\
+			& \Lambda_{\ \overline{\beta}}^\nu \\
+	\end{align*}
+	\setlength{\abovedisplayskip}{-25pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+	\begin{align*} 	
+	\end{align*}
+
+\end{multicols}
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
